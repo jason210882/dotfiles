@@ -109,9 +109,10 @@
   # the usual default is to push all branches
   default = upstream
 [core]
-  autocrlf = false
+	autocrlf = input
   editor = vim
   excludesfile = ~/.yadr/git/gitignore
+	filemode = false
 [advice]
   statusHints = false
 [diff]
@@ -125,3 +126,6 @@
   enabled = true
 [include]
   path = .gitconfig.user
+[user]
+	name = gao jin sheng
+	email = gaojinsheng@j1.com

@@ -18,6 +18,12 @@ endif
 " controller
 let g:ctrlp_by_filename = 1
 
+"When invoked, unless a starting directory is specified, CtrlP will set its "local working directory according to this variable:
+let g:ctrlp_working_path_mode = 'ra'
+""'c' - the directory of the current file.
+"'r' - the nearest ancestor that contains one of these directories or files: ".git .hg .svn .bzr _darcs
+""'a' - like c, but only if the current working directory outside of CtrlP is not a direct ancestor of the directory of the·
+
 " Don't jump to already open window. This is annoying if you are maintaining
 " several Tab workspaces and want to open two windows into the same file.
 let g:ctrlp_switch_buffer = 0
@@ -46,11 +52,19 @@ map ,jl :CtrlP lib<CR>
 map ,jp :CtrlP public<CR>
 map ,js :CtrlP spec<CR>
 map ,jf :CtrlP fast_spec<CR>
-map ,jd :CtrlP db<CR>
+" map ,jd :CtrlP db<CR>
 map ,jC :CtrlP config<CR>
 map ,jV :CtrlP vendor<CR>
 map ,jF :CtrlP factories<CR>
 map ,jT :CtrlP test<CR>
+map ,jj :CtrlP /Users/j1/projects/app/j1-mai<CR>
+map ,jw :CtrlP /Users/j1/projects/app/wireless-server<CR>
+map ,jo :CtrlP /Users/j1/projects/pc/j1soa-order<CR>
+map ,jd :CtrlP /Users/j1/projects/j1center/j1-discount<CR>
+
+nnoremap <Leader>fu :CtrlPFunky<Cr>
+" narrow the list down with a word under cursor
+nnoremap <Leader>fU :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
 
 "Cmd-Shift-(M)ethod - jump to a method (tag in current file)
 "Ctrl-m is not good - it overrides behavior of Enter

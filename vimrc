@@ -61,9 +61,9 @@ endif
 set autoindent
 set smartindent
 set smarttab
-set shiftwidth=2
-set softtabstop=2
-set tabstop=2
+set shiftwidth=4
+set softtabstop=4
+set tabstop=4
 set expandtab
 
 " Auto indent pasted text
@@ -87,7 +87,9 @@ set nofoldenable        "dont fold by default
 
 " ================ Completion =======================
 
-set wildmode=list:longest
+" set wildmode=list:longest
+" changed by jinsheng
+set wildmode=full
 set wildmenu                "enable ctrl-n and ctrl-p to scroll thru matches
 set wildignore=*.o,*.obj,*~ "stuff to ignore when tab completing
 set wildignore+=*vim/backups*
@@ -98,7 +100,9 @@ set wildignore+=vendor/cache/**
 set wildignore+=*.gem
 set wildignore+=log/**
 set wildignore+=tmp/**
-set wildignore+=*.png,*.jpg,*.gif
+set wildignore+=*.png,*.jpg,*.gif 
+"add by jinsheng
+set wildchar=<Tab> wildcharm=<C-Z>
 
 " ================ Scrolling ========================
 
@@ -115,3 +119,14 @@ set smartcase       " ...unless we type a capital
 
 " ================ Custom Settings ========================
 so ~/.yadr/vim/settings.vim
+" nnoremap <Leader>g :operatorfunc=GrepOperator<cr>g@
+" function! GrepOperator(type)
+"     echom "test"
+" endfunction
+
+" nnoremap <leader>g :set operatorfunc=GrepOperator<cr>g@
+" vnoremap <leader>g :<c-u>call GrepOperator(visualmode())<cr>
+"
+" function! GrepOperator(type)
+"     echo a:type
+" endfunction
