@@ -1,6 +1,55 @@
 " Use Vim settings, rather then Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
+" ================Custom fileEncodeing========================
+set encoding=utf-8
+set fileencodings=utf-8,cp936
+set fileencoding=utf-8
+set termencoding=utf-8
+set nowrapscan
 set nocompatible
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+" set rtp+=~/.vim/bundle/Vundle.vim
+" call vundle#begin()
+" " alternatively, pass a path where Vundle should install plugins
+" "call vundle#begin('~/some/path/here')
+"
+" " let Vundle manage Vundle, required
+" Plugin 'VundleVim/Vundle.vim'
+"
+" " The following are examples of different formats supported.
+" " Keep Plugin commands between vundle#begin/end.
+" " plugin on GitHub repo
+" Plugin 'tpope/vim-fugitive'
+" plugin from http://vim-scripts.org/vim/scripts.html
+" Plugin 'L9'
+" " Git plugin not hosted on GitHub
+" Plugin 'git://git.wincent.com/command-t.git'
+" " git repos on your local machine (i.e. when working on your own plugin)
+" Plugin 'file:///home/gmarik/path/to/plugin'
+" " The sparkup vim script is in a subdirectory of this repo called vim.
+" " Pass the path to set the runtimepath properly.
+" Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+" " Avoid a name conflict with L9
+" Plugin 'user/L9', {'name': 'newL9'}
+"
+" " All of your Plugins must be added before the following line
+" call vundle#end()            " required
+" filetype plugin indent on    " required
+" " To ignore plugin indent changes, instead use:
+" "filetype plugin on
+" "
+" " Brief help
+" " :PluginList       - lists configured plugins
+" " :PluginInstall    - installs plugins; append `!` to update or just
+" :PluginUpdate
+" " :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" " :PluginClean      - confirms removal of unused plugins; append `!` to
+" auto-approve removal
+" "
+" " see :h vundle for more details or wiki for FAQ
+" " Put your non-Plugin stuff after this line
 
 " TODO: this may not be in the correct place. It is intended to allow overriding <Leader>.
 " source ~/.vimrc.before if it exists.
@@ -60,9 +109,9 @@ endif
 set autoindent
 set smartindent
 set smarttab
-set shiftwidth=2
-set softtabstop=2
-set tabstop=2
+set shiftwidth=4
+set softtabstop=4
+set tabstop=4
 set expandtab
 
 " Auto indent pasted text
@@ -115,3 +164,45 @@ set smartcase       " ...unless we type a capital
 
 " ================ Custom Settings ========================
 so ~/.yadr/vim/settings.vim
+map <F4> <Esc>:%!python -m json.tool<CR>
+
+" " ================Custom fileEncodeing========================
+" set encoding=utf-8
+" set fileencodings=utf-8,cp936
+" set fileencoding=utf-8
+" set termencoding=utf-8
+" set nowrapscan
+" ================Custom indent object========================
+" onoremap <silent>ai :<C-U>cal <SID>IndTxtObj(0)<CR>
+" onoremap <silent>ii :<C-U>cal <SID>IndTxtObj(1)<CR>
+" vnoremap <silent>ai :<C-U>cal <SID>IndTxtObj(0)<CR><Esc>gv
+" vnoremap <silent>ii :<C-U>cal <SID>IndTxtObj(1)<CR><Esc>gv
+"
+" function! s:IndTxtObj(inner)
+"   let curline = line(".")
+"   let lastline = line("$")
+"   let i = indent(line(".")) - &shiftwidth * (v:count1 - 1)
+"   let i = i < 0 ? 0 : i
+"   if getline(".") !~ "^\\s*$"
+"     let p = line(".") - 1
+"     let nextblank = getline(p) =~ "^\\s*$"
+"     while p > 0 && ((i == 0 && !nextblank) || (i > 0 && ((indent(p) >= i && !(nextblank && a:inner)) || (nextblank && !a:inner))))
+"       -
+"       let p = line(".") - 1
+"       let nextblank = getline(p) =~ "^\\s*$"
+"     endwhile
+"     normal! 0V
+"     call cursor(curline, 0)
+"     let p = line(".") + 1
+"     let nextblank = getline(p) =~ "^\\s*$"
+"     while p <= lastline && ((i == 0 && !nextblank) || (i > 0 && ((indent(p) >= i && !(nextblank && a:inner)) || (nextblank && !a:inner))))
+"       +
+"       let p = line(".") + 1
+"       let nextblank = getline(p) =~ "^\\s*$"
+"     endwhile
+"     normal! $
+"   endif
+" endfunction
+" try to fix vim suspend issue
+" set shell=/bin/zsh\ -l
+set shell=/bin/zsh\ -l
