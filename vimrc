@@ -74,7 +74,11 @@ filetype plugin on
 filetype indent on
 
 " Display tabs and trailing spaces visually
-set list listchars=tab:\ \ ,trail:·
+" set list listchars=tab:\ \ ,trail:·
+" "eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
+" " set list  need to disable to clear
+set listchars=tab:>-,space:␣,trail:~
+
 
 set nowrap       "Don't wrap lines
 set linebreak    "Wrap lines at convenient points
@@ -130,3 +134,9 @@ so ~/.yadr/vim/settings.vim
 " function! GrepOperator(type)
 "     echo a:type
 " endfunction
+"
+"
+set encoding=utf-8
+set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
+set fileencoding=utf-8
+set termencoding=utf-8
