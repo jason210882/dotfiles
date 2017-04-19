@@ -206,3 +206,9 @@ map <F4> <Esc>:%!python -m json.tool<CR>
 " try to fix vim suspend issue
 " set shell=/bin/zsh\ -l
 set shell=/bin/zsh\ -l
+
+set encoding=utf-8
+set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
+set fileencoding=utf-8
+set termencoding=utf-8
+
