@@ -39,7 +39,6 @@ let mapleader=","
 if filereadable(expand("~/.vim/vundles.vim"))
   source ~/.vim/vundles.vim
 endif
-au BufNewFile,BufRead *.vundle set filetype=vim
 
 " ================ Turn Off Swap Files ==============
 
@@ -75,10 +74,9 @@ filetype indent on
 
 " Display tabs and trailing spaces visually
 " set list listchars=tab:\ \ ,trail:·
-" "eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
-" " set list  need to disable to clear
+"eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
+" set list  need to disable to clear
 set listchars=tab:>-,space:␣,trail:~
-
 
 set nowrap       "Don't wrap lines
 set linebreak    "Wrap lines at convenient points
@@ -134,7 +132,6 @@ so ~/.yadr/vim/settings.vim
 " function! GrepOperator(type)
 "     echo a:type
 " endfunction
-"
 "
 set encoding=utf-8
 set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936

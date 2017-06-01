@@ -89,6 +89,8 @@
   svnr = svn rebase
   svnd = svn dcommit
   svnl = svn log --oneline --show-commit
+  lb = !"for k in `git branch -a|perl -pe s/^..//`;do echo `git show --pretty=format:\"%Cgreen%ci %Cblue%cr%Creset\" $k|head -n 1`\\\t$k;done|sort"
+  fb = !"for k in `git branch -a|perl -pe s/^..//`;do echo `git reflog --date=iso $k|tail -n 1`\\\t$k;done|sort -n -t{ -k 2.1,2.10n"
 [format]
   pretty = format:%C(blue)%ad%Creset %C(yellow)%h%C(green)%d%Creset %C(blue)%s %C(magenta) [%an]%Creset
 [mergetool]
