@@ -3,6 +3,4 @@ Bundle "scrooloose/nerdtree.git"
 Bundle "ctrlpvim/ctrlp.vim"
 Bundle "xolox/vim-misc"
 Bundle "xolox/vim-session"
-Bundle "tacahiroy/ctrlp-funky"
-"add by jinsheng 20170413
 Bundle "taglist.vim"
