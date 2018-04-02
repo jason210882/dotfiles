@@ -22,6 +22,11 @@ TAGS
 !TAGS/
 tags
 !tags/
+<<<<<<< HEAD
+=======
+.tags
+.tags1
+>>>>>>> upstream/master
 gtags.files
 GTAGS
 GRTAGS

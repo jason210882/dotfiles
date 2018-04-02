@@ -39,6 +39,7 @@ let mapleader=","
 if filereadable(expand("~/.vim/vundles.vim"))
   source ~/.vim/vundles.vim
 endif
+au BufNewFile,BufRead *.vundle set filetype=vim
 
 " ================ Turn Off Swap Files ==============
 
@@ -121,18 +122,6 @@ set smartcase       " ...unless we type a capital
 
 " ================ Custom Settings ========================
 so ~/.yadr/vim/settings.vim
-" nnoremap <Leader>g :operatorfunc=GrepOperator<cr>g@
-" function! GrepOperator(type)
-"     echom "test"
-" endfunction
-
-" nnoremap <leader>g :set operatorfunc=GrepOperator<cr>g@
-" vnoremap <leader>g :<c-u>call GrepOperator(visualmode())<cr>
-"
-" function! GrepOperator(type)
-"     echo a:type
-" endfunction
-"
 set encoding=utf-8
 set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
 set fileencoding=utf-8

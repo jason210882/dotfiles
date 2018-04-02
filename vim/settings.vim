@@ -13,4 +13,3 @@ for fpath in split(globpath(vimsettings, '*.vim'), '\n')
 
   exe 'source' fpath
 endfor
-let j1mai = '/Users/j1/projects/app/j1-mai'
