@@ -13,4 +13,7 @@ Bundle "nathanaelkane/vim-indent-guides"
 Bundle "nelstrom/vim-textobj-rubyblock"
 Bundle "thinca/vim-textobj-function-javascript"
 Bundle "wellle/targets.vim"
+<<<<<<< 312116a9392eeb17efa03e9e5e2102b093d7424b
 Bundle "vim-scripts/argtextobj.vim"
+=======
+>>>>>>> update fork repo, 1) add a remote name upsteam and refer to original repo, 2) git fech upstream/master, 3) git checkout macos(local repo) , 4) git merge upstream/master, 5)git push origin/macos
